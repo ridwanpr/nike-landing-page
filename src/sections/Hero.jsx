@@ -3,7 +3,7 @@ import { arrowRight } from "../assets/icons";
 import { bigShoe1 } from "../assets/images";
 import Button from "../components/Button";
 import ShoeCard from "../components/ShoeCard";
-import { statistics, shoes } from "../constants";
+import { shoes, statistics } from "../constants";
 
 const Hero = () => {
   const [bigShoeImg, setBigShoeImg] = useState(bigShoe1);
@@ -49,8 +49,8 @@ const Hero = () => {
           className="relative z-10 object-contain"
         />
         <div className="absolute -bottom-[5%] flex gap-4 max-sm:px-6 sm:left-[10%] sm:gap-6">
-          {shoes.map((shoe) => (
-            <div key={shoe}>
+          {shoes.map((shoe, index) => (
+            <div key={index}>
               <ShoeCard
                 imgUrl={shoe}
                 changeBigShoeImage={(shoe) => setBigShoeImg(shoe)}
